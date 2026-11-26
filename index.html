@@ -1,14 +1,897 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CarWe — подбор и обслуживание авто в Молдове</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="dist/output.css">
 </head>
 
-<body>
+<body class="bg-bg-primary text-white font-body antialiased">
 
+    <!-- ===== NAVBAR ===== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-bg-primary/80 backdrop-blur-xl border-b border-white/5">
+        <nav class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
+
+            <a href="#" class="font-display text-2xl lg:text-3xl font-bold">
+                Car<span class="text-brand">We</span>
+            </a>
+
+            <ul class="hidden md:flex items-center gap-10 list-none">
+                <li><a href="#directions"
+                        class="text-text-secondary hover:text-white text-sm font-medium transition">Направления</a></li>
+                <li><a href="#how" class="text-text-secondary hover:text-white text-sm font-medium transition">Как мы
+                        работаем</a></li>
+                <li><a href="#reviews"
+                        class="text-text-secondary hover:text-white text-sm font-medium transition">Отзывы</a></li>
+                <li><a href="#form"
+                        class="text-text-secondary hover:text-white text-sm font-medium transition">Контакты</a></li>
+            </ul>
+
+            <a href="#form"
+                class="hidden md:inline-block bg-brand hover:bg-brand-hover text-white font-semibold text-sm px-6 py-3 rounded-lg transition">
+                Записаться
+            </a>
+
+            <!-- Бургер (CSS-only) -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle sr-only">
+            <label for="nav-toggle" class="md:hidden cursor-pointer p-2 text-white">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </label>
+        </nav>
+
+        <!-- Мобильное меню -->
+        <div class="mobile-menu hidden md:hidden border-t border-white/5">
+            <ul class="px-6 py-4 space-y-3 list-none">
+                <li><a href="#directions" class="block text-text-secondary hover:text-white py-1">Направления</a></li>
+                <li><a href="#how" class="block text-text-secondary hover:text-white py-1">Как мы работаем</a></li>
+                <li><a href="#reviews" class="block text-text-secondary hover:text-white py-1">Отзывы</a></li>
+                <li><a href="#form" class="block text-text-secondary hover:text-white py-1">Контакты</a></li>
+                <li>
+                    <a href="#form"
+                        class="block bg-brand hover:bg-brand-hover text-white font-semibold py-3 px-5 rounded-lg text-center mt-2">
+                        Записаться
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-bg relative min-h-[100svh] flex items-center px-6 lg:px-10 pt-28 pb-16">
+        <!-- Градиент-затемнение -->
+        <div class="absolute inset-0 bg-gradient-to-r from-bg-primary via-bg-primary/80 to-bg-primary/20"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full">
+            <div class="max-w-3xl">
+                <p class="font-mono text-brand text-sm tracking-[0.2em] mb-6 font-medium">
+                    CAR / WE — ПОДБОР АВТОМОБИЛЕЙ
+                </p>
+
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] mb-7">
+                    Подберём автомобиль вашей мечты
+                </h1>
+
+                <p class="text-base lg:text-lg leading-relaxed text-text-secondary mb-10 max-w-2xl">
+                    Выездная диагностика авто с пробегом по всей Молдове, покупка новых машин у дилеров без наценок
+                    и собственный сервис для планового ТО
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 mb-14">
+                    <a href="#form"
+                        class="bg-brand hover:bg-brand-hover text-white font-semibold px-8 py-4 rounded-lg text-center transition">
+                        Подобрать авто →
+                    </a>
+                    <a href="#form"
+                        class="border-2 border-white/30 hover:border-brand hover:text-brand text-white font-semibold px-8 py-4 rounded-lg text-center transition">
+                        Записаться на обслуживание
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap gap-10 sm:gap-16">
+                    <div>
+                        <div class="font-mono text-4xl lg:text-5xl font-bold mb-2">1 200+</div>
+                        <div class="text-sm text-text-secondary">подборов</div>
+                    </div>
+                    <div>
+                        <div class="font-mono text-4xl lg:text-5xl font-bold mb-2">48</div>
+                        <div class="text-sm text-text-secondary">марок</div>
+                    </div>
+                    <div>
+                        <div class="font-mono text-4xl lg:text-5xl font-bold mb-2">98%</div>
+                        <div class="text-sm text-text-secondary">довольных клиентов</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ПРЕИМУЩЕСТВА ===== -->
+    <section class="relative px-6 lg:px-10 py-24 lg:py-32 overflow-hidden">
+
+        <!-- Фоновая сетка (для заполнения пустоты) -->
+        <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#2A2A2A_1px,transparent_1px),linear-gradient(to_bottom,#2A2A2A_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 pointer-events-none">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto">
+
+            <div class="text-center mb-20">
+                <div class="font-mono text-brand text-sm tracking-[0.2em] mb-4">ПОЧЕМУ МЫ</div>
+                <h2 class="font-display text-3xl lg:text-5xl font-bold mb-4">Наши преимущества</h2>
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto">
+                    Помогаем на каждом этапе: от выбора авто до его обслуживания
+                </p>
+            </div>
+
+            <!-- Карточки -->
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+                <!-- Карточка 1 -->
+                <div
+                    class="group relative bg-bg-secondary border border-border-subtle rounded-2xl p-8 hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.1)] transition-all duration-300">
+                    <div
+                        class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6 text-brand group-hover:scale-110 transition-transform duration-300">
+                        <!-- Иконка: Поиск/Проверка -->
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-3">Честная проверка</h3>
+                    <p class="text-text-secondary text-sm leading-relaxed">
+                        120+ пунктов диагностики перед покупкой и прозрачная дефектовка при ремонте
+                    </p>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div
+                    class="group relative bg-bg-secondary border border-border-subtle rounded-2xl p-8 hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.1)] transition-all duration-300">
+                    <div
+                        class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6 text-brand group-hover:scale-110 transition-transform duration-300">
+                        <!-- Иконка: Время/Часы -->
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-3">Экономия времени</h3>
+                    <p class="text-text-secondary text-sm leading-relaxed">
+                        Берём на себя поиск, переговоры с продавцами/дилерами и заказ запчастей
+                    </p>
+                </div>
+
+                <!-- Карточка 3 -->
+                <div
+                    class="group relative bg-bg-secondary border border-border-subtle rounded-2xl p-8 hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.1)] transition-all duration-300">
+                    <div
+                        class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6 text-brand group-hover:scale-110 transition-transform duration-300">
+                        <!-- Иконка: Деньги/Цена -->
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-3">Прозрачная цена</h3>
+                    <p class="text-text-secondary text-sm leading-relaxed">
+                        Фиксированная стоимость подбора и согласование сметы на ремонт до начала работ
+                    </p>
+                </div>
+
+                <!-- Карточка 4 -->
+                <div
+                    class="group relative bg-bg-secondary border border-border-subtle rounded-2xl p-8 hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.1)] transition-all duration-300">
+                    <div
+                        class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6 text-brand group-hover:scale-110 transition-transform duration-300">
+                        <!-- Иконка: Гаечный ключ/Сопровождение -->
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-3">Полное сопровождение</h3>
+                    <p class="text-text-secondary text-sm leading-relaxed">
+                        От проверки документов при покупке до планового ТО через каждые 10 000 км
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== НАПРАВЛЕНИЯ ===== -->
+    <section id="directions"
+        class="relative px-6 lg:px-10 py-24 bg-bg-secondary scroll-mt-20 border-t border-border-subtle">
+        <div class="relative max-w-7xl mx-auto">
+
+            <div class="text-center mb-16">
+                <div class="font-mono text-brand text-sm tracking-[0.2em] mb-4">ЧТО МЫ ДЕЛАЕМ</div>
+                <h2 class="font-display text-3xl lg:text-5xl font-bold mb-4">Наши направления</h2>
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto">
+                    Помогаем на каждом этапе: от выбора авто до его обслуживания
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 mb-12 border-b border-border-subtle">
+                <button data-tab="used"
+                    class="tab-btn px-5 py-3 font-semibold text-brand border-b-2 border-brand -mb-px transition">Авто с
+                    пробегом</button>
+                <button data-tab="new"
+                    class="tab-btn px-5 py-3 font-semibold text-text-secondary border-b-2 border-transparent hover:text-white -mb-px transition">Новые
+                    из салона</button>
+                <button data-tab="service"
+                    class="tab-btn px-5 py-3 font-semibold text-text-secondary border-b-2 border-transparent hover:text-white -mb-px transition">Обслуживание
+                    и ТО</button>
+            </div>
+
+            <!-- Вкладка 1 -->
+            <div data-panel="used" class="tab-panel">
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+                    <!-- Карточка 1 -->
+                    <article
+                        class="bg-bg-primary border border-border-subtle rounded-2xl overflow-hidden hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.05)] transition-all duration-300 flex flex-col">
+                        <div class="relative h-48 overflow-hidden bg-bg-secondary">
+                            <img src="img/car1.jpg" alt="BMW 320i"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="font-display font-semibold text-lg">Toyota Camry</h3>
+                                <span class="text-brand font-mono font-bold">249 000 MDL</span>
+                            </div>
+                            <p class="text-sm text-text-secondary mb-5">2020 · 68 000 км · 2.5 AT</p>
+                            <ul class="text-sm text-text-secondary space-y-2 mb-6 list-none flex-1">
+                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg> Проверен по 120 пунктам</li>
+                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg> Без ДТП и ограничений</li>
+                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg> Один владелец</li>
+                            </ul>
+                            <button
+                                class="w-full bg-brand hover:bg-brand-hover text-white font-semibold py-3 rounded-lg transition">Подробнее</button>
+                        </div>
+                    </article>
+
+                    <!-- Карточка 2 -->
+                    <article
+                        class="bg-bg-primary border border-border-subtle rounded-2xl overflow-hidden hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.05)] transition-all duration-300 flex flex-col">
+                        <div class="relative h-48 overflow-hidden bg-bg-secondary">
+                            <img src="img/car2.jpg" alt="Kia Sportage"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="font-display font-semibold text-lg">Kia Sportage</h3>
+                                <span class="text-brand font-mono font-bold">319 000 MDL</span>
+                            </div>
+                            <p class="text-sm text-text-secondary mb-5">2021 · 42 000 км · 2.0 AT</p>
+                            <ul class="text-sm text-text-secondary space-y-2 mb-6 list-none flex-1">
+                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg> Проверен по 120 пунктам</li>
+                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg> Обслужен у дилера</li>
+                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg> Гарантия 1 год</li>
+                            </ul>
+                            <button
+                                class="w-full bg-brand hover:bg-brand-hover text-white font-semibold py-3 rounded-lg transition">Подробнее</button>
+                        </div>
+                    </article>
+
+                    <!-- Карточка 3 -->
+                    <article
+                        class="bg-bg-primary border border-border-subtle rounded-2xl overflow-hidden hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.05)] transition-all duration-300 flex flex-col">
+                        <div class="relative h-48 overflow-hidden bg-bg-secondary">
+                            <img src="img/car3.jpg" alt="BMW 320i"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="font-display font-semibold text-lg">BMW 320i</h3>
+                                <span class="text-brand font-mono font-bold">409 000 MDL</span>
+                            </div>
+                            <p class="text-sm text-text-secondary mb-5">2019 · 95 000 км · 2.0 AT</p>
+                            <ul class="text-sm text-text-secondary space-y-2 mb-6 list-none flex-1">
+                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg> Проверен по 120 пунктам</li>
+                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg> Полная история</li>
+                                <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg> 2 комплекта колёс</li>
+                            </ul>
+                            <button
+                                class="w-full bg-brand hover:bg-brand-hover text-white font-semibold py-3 rounded-lg transition">Подробнее</button>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div
+                    class="mt-12 text-center bg-brand/5 border border-brand/20 rounded-2xl p-10 relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-[linear-gradient(to_right,#FF3D00_1px,transparent_1px),linear-gradient(to_bottom,#FF3D00_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-[0.03] pointer-events-none">
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-3 relative z-10">Не нашли нужную машину?</h3>
+                    <p class="text-text-secondary mb-6 relative z-10">Проверим любое авто перед покупкой — выезжаем по
+                        всей Молдове</p>
+                    <a href="#form"
+                        class="relative z-10 inline-block bg-brand hover:bg-brand-hover text-white font-bold px-8 py-4 rounded-lg transition shadow-lg shadow-brand/20">Заказать
+                        выездную проверку</a>
+                </div>
+            </div>
+
+            <!-- Вкладка 2 -->
+            <div data-panel="new" class="tab-panel hidden">
+                <div class="grid gap-6 md:grid-cols-3">
+                    <div
+                        class="group bg-bg-primary border border-border-subtle rounded-2xl p-8 hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.1)] transition-all duration-300">
+                        <div
+                            class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6 text-brand group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-display font-semibold text-lg mb-3">Подбор комплектации</h3>
+                        <p class="text-text-secondary text-sm leading-relaxed">Разберёмся в опциях и подберём ту
+                            комплектацию, которая действительно нужна — без переплат.</p>
+                    </div>
+                    <div
+                        class="group bg-bg-primary border border-border-subtle rounded-2xl p-8 hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.1)] transition-all duration-300">
+                        <div
+                            class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6 text-brand group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-display font-semibold text-lg mb-3">Скидки у дилеров</h3>
+                        <p class="text-text-secondary text-sm leading-relaxed">Знаем реальные цены в Кишинёве и
+                            «выбиваем» максимальную скидку — экономия бывает до 15%.</p>
+                    </div>
+                    <div
+                        class="group bg-bg-primary border border-border-subtle rounded-2xl p-8 hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.1)] transition-all duration-300">
+                        <div
+                            class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6 text-brand group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-display font-semibold text-lg mb-3">Проверка перед выдачей</h3>
+                        <p class="text-text-secondary text-sm leading-relaxed">Осматриваем новое авто перед выездом из
+                            салона: ЛКП, зазоры, комплектация.</p>
+                    </div>
+                </div>
+                <div class="mt-12 text-center bg-brand/5 border border-brand/20 rounded-2xl p-10">
+                    <h3 class="font-display text-2xl font-bold mb-3">Хотите купить новое авто выгодно?</h3>
+                    <p class="text-text-secondary mb-6">Подберём машину, найдём лучшую цену и проверим перед выдачей</p>
+                    <a href="#form"
+                        class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-8 py-4 rounded-lg transition shadow-lg shadow-brand/20">Получить
+                        консультацию</a>
+                </div>
+            </div>
+
+            <!-- Вкладка 3 -->
+            <div data-panel="service" class="tab-panel hidden">
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <div
+                        class="group bg-bg-primary border border-border-subtle rounded-2xl p-8 hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.1)] transition-all duration-300">
+                        <div
+                            class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6 text-brand group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-display font-semibold mb-3">Замена масел</h3>
+                        <p class="text-text-secondary text-sm leading-relaxed">Двигатель, АКПП, редукторы — с
+                            оригинальными расходниками.</p>
+                    </div>
+                    <div
+                        class="group bg-bg-primary border border-border-subtle rounded-2xl p-8 hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.1)] transition-all duration-300">
+                        <div
+                            class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6 text-brand group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-display font-semibold mb-3">Диагностика ходовой</h3>
+                        <p class="text-text-secondary text-sm leading-relaxed">Полная проверка подвески на подъёмнике с
+                            фотоотчётом.</p>
+                    </div>
+                    <div
+                        class="group bg-bg-primary border border-border-subtle rounded-2xl p-8 hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.1)] transition-all duration-300">
+                        <div
+                            class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6 text-brand group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                        </div>
+                        <h3 class="font-display font-semibold mb-3">Эндоскопия</h3>
+                        <p class="text-text-secondary text-sm leading-relaxed">Проверка состояния цилиндров двигателя
+                            без разборки.</p>
+                    </div>
+                    <div
+                        class="group bg-bg-primary border border-border-subtle rounded-2xl p-8 hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.1)] transition-all duration-300">
+                        <div
+                            class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6 text-brand group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-display font-semibold mb-3">Предпродажная подготовка</h3>
+                        <p class="text-text-secondary text-sm leading-relaxed">Приведём авто в порядок перед продажей:
+                            косметика и техника.</p>
+                    </div>
+                </div>
+                <div class="mt-12 text-center bg-brand/5 border border-brand/20 rounded-2xl p-10">
+                    <h3 class="font-display text-2xl font-bold mb-3">Пора на плановое ТО?</h3>
+                    <p class="text-text-secondary mb-6">Запишитесь в наш сервис — работаем без очередей и наценок</p>
+                    <a href="#form"
+                        class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-8 py-4 rounded-lg transition shadow-lg shadow-brand/20">Записаться
+                        на обслуживание</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== КАК МЫ РАБОТАЕМ ===== -->
+    <section id="how" class="relative px-6 lg:px-10 py-24 lg:py-32 scroll-mt-20 overflow-hidden">
+        <!-- Фоновая сетка -->
+        <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#2A2A2A_1px,transparent_1px),linear-gradient(to_bottom,#2A2A2A_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 pointer-events-none">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto">
+
+            <div class="text-center mb-20">
+                <div class="font-mono text-brand text-sm tracking-[0.2em] mb-4">ПРОЦЕСС</div>
+                <h2 class="font-display text-3xl lg:text-5xl font-bold mb-4">Как мы работаем</h2>
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto">
+                    Четыре простых шага — от заявки до готового результата
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Линия: на мобилках вертикальная слева, на десктопе горизонтальная -->
+                <div
+                    class="hidden md:block absolute top-8 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-brand/0 via-brand/50 to-brand/0">
+                </div>
+                <div
+                    class="md:hidden absolute top-0 bottom-0 left-8 w-0.5 bg-gradient-to-b from-brand/0 via-brand/50 to-brand/0">
+                </div>
+
+                <div class="grid gap-12 md:grid-cols-4 md:gap-6">
+
+                    <div class="relative flex md:flex-col items-start md:items-start gap-6 md:gap-0">
+                        <div
+                            class="relative z-10 shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-bg-primary border-2 border-brand text-brand font-mono text-xl font-bold shadow-[0_0_20px_rgba(255,61,0,0.2)]">
+                            1</div>
+                        <div class="md:mt-6">
+                            <h3 class="font-display font-semibold text-lg mb-2">Заявка</h3>
+                            <p class="text-text-secondary text-sm leading-relaxed">Оставляете контакты и задачу —
+                                покупка или сервис.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex md:flex-col items-start md:items-start gap-6 md:gap-0">
+                        <div
+                            class="relative z-10 shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-bg-primary border-2 border-brand text-brand font-mono text-xl font-bold shadow-[0_0_20px_rgba(255,61,0,0.2)]">
+                            2</div>
+                        <div class="md:mt-6">
+                            <h3 class="font-display font-semibold text-lg mb-2">Консультация</h3>
+                            <p class="text-text-secondary text-sm leading-relaxed">Уточняем бюджет, марку или симптомы
+                                поломки.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex md:flex-col items-start md:items-start gap-6 md:gap-0">
+                        <div
+                            class="relative z-10 shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-bg-primary border-2 border-brand text-brand font-mono text-xl font-bold shadow-[0_0_20px_rgba(255,61,0,0.2)]">
+                            3</div>
+                        <div class="md:mt-6">
+                            <h3 class="font-display font-semibold text-lg mb-2">Подбор / Диагностика</h3>
+                            <p class="text-text-secondary text-sm leading-relaxed">Ищем лучшие варианты (новые/б/у) или
+                                проводим дефектовку в боксе.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex md:flex-col items-start md:items-start gap-6 md:gap-0">
+                        <div
+                            class="relative z-10 shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-bg-primary border-2 border-brand text-brand font-mono text-xl font-bold shadow-[0_0_20px_rgba(255,61,0,0.2)]">
+                            4</div>
+                        <div class="md:mt-6">
+                            <h3 class="font-display font-semibold text-lg mb-2">Покупка или Ремонт</h3>
+                            <p class="text-text-secondary text-sm leading-relaxed">Сопровождаем регистрацию в ASP (бывш.
+                                МРЭО) или выдаём обслуженный автомобиль с гарантией.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="#form"
+                    class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-10 py-4 rounded-lg transition shadow-lg shadow-brand/20">
+                    Оставить заявку
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== ОТЗЫВЫ ===== -->
+    <section id="reviews"
+        class="relative px-6 lg:px-10 py-24 bg-bg-secondary scroll-mt-20 border-t border-border-subtle">
+        <div class="relative max-w-7xl mx-auto">
+
+            <div class="text-center mb-16">
+                <div class="font-mono text-brand text-sm tracking-[0.2em] mb-4">КЕЙСЫ</div>
+                <h2 class="font-display text-3xl lg:text-5xl font-bold mb-4">Отзывы клиентов</h2>
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto">
+                    Реальные кейсы — от подбора до сервиса
+                </p>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-3">
+
+                <!-- Отзыв 1 -->
+                <article
+                    class="group bg-bg-primary border border-border-subtle rounded-2xl p-8 flex flex-col hover:border-brand/50 hover:shadow-[0_0_30px_rgba(255,61,0,0.05)] transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-5">
+                        <span
+                            class="inline-flex items-center gap-1.5 bg-brand/10 text-brand text-xs font-mono font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                            Подбор б/у
+                        </span>
+                    </div>
+                    <p class="text-white/90 leading-relaxed mb-6 flex-1 text-[15px]">
+                        «Нашли живой Tiguan, сторговали 12 000 MDL за окрас двери. Проверили по всем пунктам — ни одного
+                        сюрприза».
+                    </p>
+                    <div class="flex items-center gap-3 pt-5 border-t border-border-subtle">
+                        <div
+                            class="w-10 h-10 rounded-full bg-brand/20 flex items-center justify-center font-bold text-brand">
+                            А</div>
+                        <div>
+                            <div class="font-semibold text-sm">Алексей</div>
+                            <div class="text-xs text-text-secondary">Volkswagen Tiguan</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Отзыв 2 -->
+                <article
+                    class="group bg-bg-primary border border-border-subtle rounded-2xl p-8 flex flex-col hover:border-green-500/50 hover:shadow-[0_0_30px_rgba(34,197,94,0.05)] transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-5">
+                        <span
+                            class="inline-flex items-center gap-1.5 bg-green-500/10 text-green-400 text-xs font-mono font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            Новый из салона
+                        </span>
+                    </div>
+                    <p class="text-white/90 leading-relaxed mb-6 flex-1 text-[15px]">
+                        «Помогли забрать Kia Sportage без навязанных допов на 27 000 MDL. Скидку выбили больше, чем я
+                        ожидал».
+                    </p>
+                    <div class="flex items-center gap-3 pt-5 border-t border-border-subtle">
+                        <div
+                            class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center font-bold text-green-400">
+                            М</div>
+                        <div>
+                            <div class="font-semibold text-sm">Мария</div>
+                            <div class="text-xs text-text-secondary">Kia Sportage</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Отзыв 3 -->
+                <article
+                    class="group bg-bg-primary border border-border-subtle rounded-2xl p-8 flex flex-col hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.05)] transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-5">
+                        <span
+                            class="inline-flex items-center gap-1.5 bg-purple-500/10 text-purple-400 text-xs font-mono font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Обслуживание
+                        </span>
+                    </div>
+                    <p class="text-white/90 leading-relaxed mb-6 flex-1 text-[15px]">
+                        «Пригнал машину на ТО после покупки — всё чётко по прайсу, без сюрпризов. Теперь только сюда».
+                    </p>
+                    <div class="flex items-center gap-3 pt-5 border-t border-border-subtle">
+                        <div
+                            class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center font-bold text-purple-400">
+                            Д</div>
+                        <div>
+                            <div class="font-semibold text-sm">Дмитрий</div>
+                            <div class="text-xs text-text-secondary">Плановое ТО</div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ФОРМА ===== -->
+    <section id="form" class="relative px-6 lg:px-10 py-24 lg:py-32 scroll-mt-20 overflow-hidden">
+        <!-- Свечение позади формы -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="relative max-w-2xl mx-auto">
+
+            <div class="text-center mb-12">
+                <div class="font-mono text-brand text-sm tracking-[0.2em] mb-4">ЗАЯВКА</div>
+                <h2 class="font-display text-3xl lg:text-5xl font-bold mb-4">Оставить заявку</h2>
+                <p class="text-text-secondary text-lg">Ответим в течение 15 минут и уточним детали</p>
+            </div>
+
+            <form
+                class="bg-bg-secondary border border-border-subtle rounded-2xl p-6 md:p-10 space-y-6 shadow-2xl shadow-black/50 relative z-10">
+
+                <div>
+                    <span class="block text-sm font-semibold mb-3">Цель обращения</span>
+                    <div class="grid grid-cols-2 gap-2 p-1.5 bg-bg-primary rounded-xl">
+                        <input type="radio" name="goal" id="goal-car" class="goal-radio sr-only" checked>
+                        <label for="goal-car"
+                            class="goal-label cursor-pointer text-center py-3 rounded-lg text-sm font-semibold text-text-secondary transition">
+                            Подбор авто
+                        </label>
+
+                        <input type="radio" name="goal" id="goal-service" class="goal-radio sr-only">
+                        <label for="goal-service"
+                            class="goal-label cursor-pointer text-center py-3 rounded-lg text-sm font-semibold text-text-secondary transition">
+                            Запись на сервис
+                        </label>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-sm font-semibold mb-2">Имя</label>
+                        <input id="name" type="text" placeholder="Как к вам обращаться"
+                            class="w-full px-4 py-3 bg-bg-primary border border-border-subtle rounded-lg text-white placeholder:text-text-secondary/60 focus:outline-none focus:border-brand transition">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-semibold mb-2">Телефон</label>
+                        <input id="phone" type="tel" placeholder="+373 (__) ___-___"
+                            class="w-full px-4 py-3 bg-bg-primary border border-border-subtle rounded-lg text-white placeholder:text-text-secondary/60 focus:outline-none focus:border-brand transition">
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <label for="city" class="block text-sm font-semibold mb-2">Город</label>
+                    <select id="city"
+                        class="w-full px-4 py-3 bg-bg-primary border border-border-subtle rounded-lg text-white focus:outline-none focus:border-brand transition appearance-none cursor-pointer">
+                        <option>Кишинёв</option>
+                        <option>Бельцы</option>
+                        <option>Тирасполь</option>
+                        <option>Орхей</option>
+                        <option>Кагул</option>
+                        <option>Унгены</option>
+                        <option>Другой</option>
+                    </select>
+                    <svg class="w-5 h-5 text-text-secondary absolute right-4 top-[44px] pointer-events-none" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+
+                <div class="fields-car space-y-6">
+                    <div>
+                        <label for="budget" class="block text-sm font-semibold mb-2">Бюджет</label>
+                        <input id="budget" type="text" placeholder="Например, до 300 000 MDL"
+                            class="w-full px-4 py-3 bg-bg-primary border border-border-subtle rounded-lg text-white placeholder:text-text-secondary/60 focus:outline-none focus:border-brand transition">
+                    </div>
+                    <div>
+                        <label for="brand" class="block text-sm font-semibold mb-2">Желаемая марка</label>
+                        <input id="brand" type="text" placeholder="Например, Toyota, Kia..."
+                            class="w-full px-4 py-3 bg-bg-primary border border-border-subtle rounded-lg text-white placeholder:text-text-secondary/60 focus:outline-none focus:border-brand transition">
+                    </div>
+                </div>
+
+                <div class="fields-service space-y-6 hidden">
+                    <div class="relative">
+                        <label for="work-type" class="block text-sm font-semibold mb-2">Вид работ</label>
+                        <select id="work-type"
+                            class="w-full px-4 py-3 bg-bg-primary border border-border-subtle rounded-lg text-white focus:outline-none focus:border-brand transition appearance-none cursor-pointer">
+                            <option>ТО (плановое)</option>
+                            <option>Диагностика</option>
+                            <option>Ремонт</option>
+                        </select>
+                        <svg class="w-5 h-5 text-text-secondary absolute right-4 top-[44px] pointer-events-none"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-brand hover:bg-brand-hover text-white font-bold py-4 rounded-lg transition shadow-lg shadow-brand/20 mt-2">
+                    Отправить заявку
+                </button>
+
+                <p class="text-xs text-text-secondary text-center">
+                    Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
+                </p>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-[#050505] border-t border-border-subtle px-6 lg:px-10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Верхняя часть футера -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+                <!-- Колонка 1: Логотип и описание -->
+                <div class="lg:col-span-2">
+                    <a href="#" class="font-display text-3xl font-bold mb-4 inline-block">
+                        Car<span class="text-brand">We</span>
+                    </a>
+                    <p class="text-text-secondary text-sm leading-relaxed max-w-sm mb-6">
+                        Выездная диагностика авто с пробегом по всей Молдове, покупка новых машин у дилеров без наценок
+                        и собственный сервис для планового ТО.
+                    </p>
+                    <!-- Соцсети -->
+                    <div class="flex items-center gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-bg-secondary border border-border-subtle flex items-center justify-center text-text-secondary hover:text-brand hover:border-brand/50 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-bg-secondary border border-border-subtle flex items-center justify-center text-text-secondary hover:text-brand hover:border-brand/50 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-bg-secondary border border-border-subtle flex items-center justify-center text-text-secondary hover:text-brand hover:border-brand/50 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Колонка 2: Навигация -->
+                <div>
+                    <h4 class="font-display font-semibold text-white mb-5 uppercase tracking-wider text-sm">Навигация
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#directions"
+                                class="text-text-secondary hover:text-brand text-sm transition">Направления</a></li>
+                        <li><a href="#how" class="text-text-secondary hover:text-brand text-sm transition">Как мы
+                                работаем</a></li>
+                        <li><a href="#reviews"
+                                class="text-text-secondary hover:text-brand text-sm transition">Отзывы</a></li>
+                        <li><a href="#form" class="text-text-secondary hover:text-brand text-sm transition">Оставить
+                                заявку</a></li>
+                    </ul>
+                </div>
+
+                <!-- Колонка 3: Контакты -->
+                <div>
+                    <h4 class="font-display font-semibold text-white mb-5 uppercase tracking-wider text-sm">Контакты
+                    </h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span class="text-text-secondary text-sm">Кишинёв, Молдова<br>ул. Автомобильная, 1</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <a href="tel:+37322000000"
+                                class="text-text-secondary hover:text-brand text-sm transition">+373 (22) 000-000</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <a href="mailto:hello@carwe.md"
+                                class="text-text-secondary hover:text-brand text-sm transition">hello@carwe.md</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Нижняя часть футера -->
+            <div
+                class="pt-8 border-t border-border-subtle flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-text-secondary">
+                    © 2026 CarWe. Все права защищены.
+                </p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-xs text-text-secondary hover:text-white transition">Политика
+                        конфиденциальности</a>
+                    <a href="#" class="text-xs text-text-secondary hover:text-white transition">Публичный договор</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 
 </html>

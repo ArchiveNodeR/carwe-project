@@ -1,11 +1,15 @@
 {
+
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+  },
+
   "name": "about-tailwind",
   "version": "1.0.0",
   "description": "All about Tailwind",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArchiveNodeR/About-Tailwind.git"
