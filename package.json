@@ -1,14 +1,15 @@
 {
-
+  "name": "carwe-project",
+  "version": "1.0.0",
+  "description": "CarWe landing page",
   "scripts": {
     "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
   },
-
-  "name": "about-tailwind",
-  "version": "1.0.0",
-  "description": "All about Tailwind",
-  "main": "index.js",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.5",
+    "tailwindcss": "^4.3.5"
+  },
 
   "repository": {
     "type": "git",
@@ -21,9 +22,5 @@
   "bugs": {
     "url": "https://github.com/ArchiveNodeR/About-Tailwind/issues"
   },
-  "homepage": "https://github.com/ArchiveNodeR/About-Tailwind#readme",
-  "dependencies": {
-    "@tailwindcss/cli": "^4.3.5",
-    "tailwindcss": "^4.3.5"
-  }
+  "homepage": "https://github.com/ArchiveNodeR/About-Tailwind#readme"
 }
