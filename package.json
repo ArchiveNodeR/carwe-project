@@ -3,24 +3,23 @@
   "version": "1.0.0",
   "description": "CarWe landing page",
   "scripts": {
-    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.5",
     "tailwindcss": "^4.3.5"
   },
-
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArchiveNodeR/About-Tailwind.git"
+    "url": "git+https://github.com/ArchiveNodeR/CarWe-Project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/ArchiveNodeR/About-Tailwind/issues"
+    "url": "https://github.com/ArchiveNodeR/CarWe-Project/issues"
   },
-  "homepage": "https://github.com/ArchiveNodeR/About-Tailwind#readme"
+  "homepage": "https://github.com/ArchiveNodeR/CarWe-Project#readme"
 }
