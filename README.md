@@ -27,7 +27,7 @@
 
 Для работы с проектом вам понадобится [Node.js](https://nodejs.org/)
 
-About-Tailwind/
+CarWe-Project/
 ├── dist/
 │   └── output.css        # Скомпилированный CSS (генерируется автоматически)
 ├── img/                  # Изображения (фото машин, фон hero)
