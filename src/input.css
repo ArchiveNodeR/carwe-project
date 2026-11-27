@@ -93,9 +93,9 @@ button:focus-visible {
 .hero-bg {
     background-image:
         linear-gradient(to right,
-            rgba(10, 10, 10, 0.95) 0%,
-            rgba(10, 10, 10, 0.8) 50%,
-            rgba(10, 10, 10, 0.3) 100%),
+            rgba(10, 10, 10, 0.05) -500%,
+            rgba(10, 10, 10, 0.01) -500%,
+            rgba(10, 10, 10, 0.03) -500%),
         url('../img/hero-car.jpg');
     background-size: cover;
     background-position: center;
@@ -115,4 +115,41 @@ button:focus-visible {
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #FF3D00;
+}
+
+/* ===== АНИМАЦИИ ===== */
+
+/* 1. Появление Hero при загрузке (Fade Up) */
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0; /* Изначально скрыто */
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* 2. Появление при скролле (Reveal) */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
