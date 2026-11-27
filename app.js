@@ -1,3 +1,22 @@
+// ===== МОБИЛЬНОЕ МЕНЮ =====
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (menuBtn && mobileMenu) {
+    // Открытие/закрытие по клику на бургер
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Закрытие меню при клике на любую ссылку внутри него
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+}
+
 // ===== АНИМАЦИЯ ПРИ СКРОЛЛЕ =====
 document.addEventListener("DOMContentLoaded", () => {
     const reveals = document.querySelectorAll('.reveal');
@@ -17,3 +36,4 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll(); // Проверяем сразу при загрузке
 });
+

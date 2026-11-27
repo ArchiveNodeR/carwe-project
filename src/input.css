@@ -19,8 +19,10 @@ form:has(#goal-car:checked) .fields-service { display: none; }
 form:has(#goal-service:checked) .fields-service { display: block; }
 form:has(#goal-service:checked) .fields-car { display: none; }
 
-/* Мобильное меню (CSS-only) */
-.nav-toggle:checked ~ .mobile-menu { display: block; }
+/* Мобильное меню (открытие по клику на чекбокс) */
+.nav-toggle:checked ~ .mobile-menu {
+    display: block;
+}
 
 @theme {
     --color-brand: #FF3D00;
